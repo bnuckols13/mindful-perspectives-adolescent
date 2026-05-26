@@ -3,428 +3,575 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Willful, Willing, Wise — Three Brain Modes Your Body Knows Before Your Mouth Does</title>
-<meta name="description" content="A teen DBT skills page on Linehan's Wise Mind plus the Willingness / Willfulness distinction, taught as three modes your mind can be in right now, with the body cues that tell you which one is running.">
+<title>Willful / Willing / Wise — three brain modes</title>
+<meta name="description" content="A teen DBT skills board on Linehan's Wise Mind plus Willingness/Willfulness. Three brain modes your body knows before your mouth does. Tap a pad.">
 <style>
-  *, *::before, *::after { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-
   :root {
-    --bg: #FAFAF7;
-    --surface: #FFFFFF;
-    --ink: #16161A;
-    --ink-2: #4B4B52;
-    --ink-3: #94939A;
-    --rule: #E8E6E1;
-    --accent: #6B4FBB;
-    --accent-bg: #EFEAF8;
-    --accent-2: #C45A8A;
-    --accent-2-bg: #F8E9F0;
-    --warm: #D4843C;
-    --warm-bg: #F9EEDC;
-    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
-    --measure: 38rem;
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --surface-2: #1c1c1c;
+    --border: #262626;
+    --border-strong: #3a3a3a;
+    --text: #e8e6e1;
+    --muted: #8a857c;
+    --dim: #5a554d;
+    --willful: #c8362d;
+    --willful-dim: rgba(200, 54, 45, 0.12);
+    --willing: #6b8acf;
+    --willing-dim: rgba(107, 138, 207, 0.12);
+    --wise: #b07ec8;
+    --wise-dim: rgba(176, 126, 200, 0.12);
+    --warn: #d4a23c;
+    --warn-dim: rgba(212, 162, 60, 0.12);
   }
 
-  body {
-    font-family: var(--sans);
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
     background: var(--bg);
-    color: var(--ink);
-    line-height: 1.7;
-    font-size: 17px;
+    color: var(--text);
+    font-family: 'IBM Plex Mono', 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
   }
 
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 4rem 1.5rem 5rem;
-  }
-
-  .meta {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.25rem;
-  }
-
-  h1 {
-    font-family: var(--sans);
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.025em;
-    color: var(--ink);
-    margin: 0 0 0.75rem;
-  }
-  .subtitle {
-    font-size: 1.1rem;
-    color: var(--ink-2);
-    line-height: 1.55;
-    margin: 0 0 3rem;
-    max-width: 580px;
-  }
-
-  h2 {
-    font-family: var(--sans);
-    font-size: 1.6rem;
-    font-weight: 800;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-    margin: 3.5rem 0 1rem;
-    line-height: 1.2;
-  }
-  h2 .eyebrow {
-    display: block;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-  }
-
-  h3 {
-    font-family: var(--sans);
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin: 2rem 0 0.75rem;
-  }
-
-  p {
-    margin: 0 0 1.1rem;
-    color: var(--ink-2);
-    line-height: 1.7;
-  }
-  p strong { color: var(--ink); font-weight: 700; }
-  p em { font-style: italic; }
-
-  .lede {
-    font-family: var(--serif);
-    font-size: 1.2rem;
-    font-style: italic;
+  body {
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(176, 126, 200, 0.04), transparent 50%),
+      radial-gradient(circle at 85% 100%, rgba(200, 54, 45, 0.03), transparent 50%);
+    padding: 3rem 1.5rem 5rem;
+    font-size: 14px;
     line-height: 1.6;
-    color: var(--ink);
-    padding: 0 0 0 1.5rem;
-    border-left: 3px solid var(--accent);
-    margin: 2rem 0;
   }
 
-  hr {
-    border: none;
-    border-top: 1px solid var(--rule);
-    margin: 3.5rem 0;
-  }
+  .container { max-width: 880px; margin: 0 auto; }
 
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--rule);
-    border-radius: 12px;
-    padding: 1.5rem 1.75rem;
-    margin: 1.25rem 0;
-  }
-  .card.willful { border-left: 5px solid var(--warm); }
-  .card.willing { border-left: 5px solid var(--accent); }
-  .card.wise { border-left: 5px solid var(--accent-2); }
-
-  .card h3 {
-    margin-top: 0;
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
     display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    flex-wrap: wrap;
   }
-  .card .num {
-    font-family: var(--serif);
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1;
-  }
-  .card.willful .num { color: var(--warm); }
-  .card.willing .num { color: var(--accent); }
-  .card.wise .num { color: var(--accent-2); }
-
-  .row {
-    display: grid;
-    grid-template-columns: 130px 1fr;
-    gap: 0.75rem 1.25rem;
-    margin: 0.75rem 0;
-    padding: 0.75rem 0;
-    border-top: 1px solid var(--rule);
-  }
-  .row:first-of-type { border-top: none; padding-top: 0; }
-  .row-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    line-height: 1.4;
-    padding-top: 0.15rem;
-  }
-  .row-text {
+  h1 {
     font-size: 0.95rem;
-    color: var(--ink-2);
-    line-height: 1.65;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text);
   }
-  .row-text strong { color: var(--ink); }
-  .row-text em { font-style: italic; color: var(--ink); }
-
-  .callout {
-    background: var(--accent-bg);
-    border-left: 4px solid var(--accent);
-    padding: 1.25rem 1.5rem;
-    border-radius: 0 8px 8px 0;
-    margin: 2rem 0;
+  h1::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: var(--wise);
+    border-radius: 50%;
+    margin-right: 0.7rem;
+    vertical-align: middle;
+    transform: translateY(-1px);
+    box-shadow: 0 0 12px var(--wise);
   }
-  .callout.warm { background: var(--warm-bg); border-left-color: var(--warm); }
-  .callout-label {
-    font-size: 0.7rem;
-    font-weight: 700;
+  .meta {
+    font-size: 0.72rem;
+    color: var(--muted);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.5rem;
   }
-  .callout.warm .callout-label { color: var(--warm); }
-  .callout p { font-size: 0.95rem; margin-bottom: 0.6rem; }
-  .callout p:last-child { margin-bottom: 0; }
+  .meta .now { color: var(--wise); margin-left: 0.5rem; }
 
-  ol.audit, ol.try-it {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-    counter-reset: item;
+  .lede {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--wise);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text);
   }
-  ol.audit li, ol.try-it li {
+  .lede em { color: var(--muted); font-style: normal; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.65rem; display: block; margin-bottom: 0.6rem; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .pad {
     position: relative;
-    padding: 1rem 0 1rem 2.5rem;
-    border-top: 1px solid var(--rule);
-    counter-increment: item;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 1.25rem 1.1rem 1.1rem;
+    text-align: left;
+    font: inherit;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.12s ease, border-color 0.12s ease, transform 0.06s ease;
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    appearance: none;
+    -webkit-appearance: none;
   }
-  ol.audit li:first-child, ol.try-it li:first-child { border-top: none; }
-  ol.audit li::before, ol.try-it li::before {
-    content: counter(item);
+  .pad:hover { background: var(--surface-2); border-color: var(--border-strong); }
+  .pad:active { transform: translateY(1px); }
+  .pad:focus-visible { outline: 1px solid var(--text); outline-offset: 2px; }
+
+  .pad .key {
+    position: absolute;
+    top: 0.7rem;
+    right: 0.85rem;
+    font-size: 0.62rem;
+    color: var(--dim);
+    letter-spacing: 0.1em;
+  }
+  .pad .idx {
+    font-size: 0.6rem;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+    margin-bottom: 0.55rem;
+  }
+  .pad .label {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .pad .teaser {
+    text-transform: lowercase;
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-top: auto;
+  }
+
+  .pad.willful { border-left: 3px solid var(--willful); }
+  .pad.willing { border-left: 3px solid var(--willing); }
+  .pad.wise { border-left: 3px solid var(--wise); }
+  .pad.warn { border-left: 3px solid var(--warn); }
+  .pad.audit { border-left: 3px solid var(--wise); }
+  .pad.try { border-left: 3px solid var(--willing); }
+
+  .pad.lit { border-color: var(--border-strong); }
+  .pad.lit.willful { background: var(--willful-dim); border-color: var(--willful); }
+  .pad.lit.willing { background: var(--willing-dim); border-color: var(--willing); }
+  .pad.lit.wise { background: var(--wise-dim); border-color: var(--wise); }
+  .pad.lit.warn { background: var(--warn-dim); border-color: var(--warn); }
+  .pad.lit.audit { background: var(--wise-dim); border-color: var(--wise); }
+  .pad.lit.try { background: var(--willing-dim); border-color: var(--willing); }
+  .pad.lit .key, .pad.lit .idx { color: var(--text); }
+
+  .pad .indicator {
+    position: absolute;
+    bottom: 0.7rem;
+    right: 0.85rem;
+    font-size: 0.6rem;
+    color: var(--dim);
+    letter-spacing: 0.1em;
+  }
+  .pad.lit .indicator { color: var(--text); }
+  .pad.lit .indicator::before { content: '◉ '; }
+  .pad:not(.lit) .indicator::before { content: '○ '; }
+
+  .reveal {
+    margin-top: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem 1.5rem 1.75rem;
+    display: none;
+  }
+  .reveal.open { display: block; animation: appear 0.18s ease; }
+  @keyframes appear { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+  .reveal.willful { border-left: 3px solid var(--willful); }
+  .reveal.willing { border-left: 3px solid var(--willing); }
+  .reveal.wise { border-left: 3px solid var(--wise); }
+  .reveal.warn { border-left: 3px solid var(--warn); }
+  .reveal.audit { border-left: 3px solid var(--wise); }
+  .reveal.try { border-left: 3px solid var(--willing); }
+
+  .reveal h2 {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .reveal.willful h2 { color: var(--willful); }
+  .reveal.willing h2 { color: var(--willing); }
+  .reveal.wise h2 { color: var(--wise); }
+  .reveal.warn h2 { color: var(--warn); }
+  .reveal.audit h2, .reveal.try h2 { color: var(--text); }
+
+  .reveal .h-sub {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+  }
+
+  .field {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0.75rem 1.25rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .field:first-of-type { border-top: none; padding-top: 0; }
+  .field-key {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 0.15rem;
+  }
+  .field-val {
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.65;
+    font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+  }
+  .field-val em { color: var(--muted); font-style: italic; }
+  .field-val strong { color: var(--text); font-weight: 600; }
+
+  .reveal p {
+    font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .reveal p:last-child { margin-bottom: 0; }
+  .reveal p em { color: var(--muted); font-style: italic; }
+  .reveal p strong { color: var(--text); font-weight: 600; }
+
+  ol.list {
+    list-style: none;
+    counter-reset: item;
+    font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+    margin: 0.5rem 0 0;
+  }
+  ol.list li {
+    counter-increment: item;
+    padding: 0.85rem 0 0.85rem 2.5rem;
+    border-top: 1px solid var(--border);
+    position: relative;
+    color: var(--text);
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  ol.list li:first-child { border-top: none; }
+  ol.list li::before {
+    content: counter(item, decimal-leading-zero);
     position: absolute;
     left: 0;
-    top: 1.1rem;
-    font-family: var(--serif);
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--accent);
-    line-height: 1;
+    top: 0.95rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--wise);
+    letter-spacing: 0.08em;
   }
-  ol.audit li { font-size: 1rem; color: var(--ink); line-height: 1.55; }
-  ol.try-it li strong { color: var(--ink); font-weight: 700; }
-  ol.try-it li { font-size: 0.95rem; color: var(--ink-2); }
+  ol.list li em { color: var(--muted); font-style: italic; }
+  ol.list li strong { color: var(--text); font-weight: 600; }
 
   .footer {
-    margin-top: 5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule);
-    font-size: 0.85rem;
-    color: var(--ink-3);
-    line-height: 1.75;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    line-height: 1.8;
   }
-  .footer strong { color: var(--ink-2); }
-  .footer a { color: var(--accent); }
-  .footer .credit {
-    margin-top: 1.5rem;
-    font-size: 0.75rem;
-    color: var(--ink-3);
-    font-style: italic;
+  .footer kbd {
+    font-family: inherit;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.1rem 0.4rem;
+    border-radius: 2px;
+    font-size: 0.65rem;
+    color: var(--text);
   }
+  .footer a { color: var(--wise); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .footer a:hover { border-color: var(--wise); }
+  .footer .crisis { margin-top: 1.5rem; color: var(--text); }
+  .footer .crisis strong { color: var(--willful); }
+  .footer .credit { margin-top: 1rem; color: var(--dim); font-size: 0.65rem; }
 
   @media (max-width: 600px) {
-    .wrap { padding: 2.5rem 1.25rem 4rem; }
-    .row { grid-template-columns: 1fr; gap: 0.25rem; }
-    .row-label { padding-top: 0; }
-    body { font-size: 16px; }
+    body { padding: 2rem 1rem 4rem; }
+    .grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .pad { min-height: 110px; padding: 1rem 0.85rem 0.85rem; }
+    .pad .label { font-size: 0.75rem; }
+    .pad .teaser { font-size: 0.65rem; }
+    .field { grid-template-columns: 1fr; gap: 0.2rem; }
+    .reveal { padding: 1.25rem 1.1rem; }
   }
 </style>
 </head>
 <body>
 
-<main class="wrap">
+<div class="container">
 
-  <div class="meta">DBT Skills · Adolescent</div>
-  <h1>Willful, Willing, Wise</h1>
-  <p class="subtitle">Three brain modes you're always slipping between. Your body knows which one is running before your mouth catches up.</p>
+  <header>
+    <h1>Willful / Willing / Wise</h1>
+    <span class="meta">06 cues<span class="now" id="now"></span></span>
+  </header>
 
-  <blockquote class="lede">
-    <p>A sixteen-year-old has decided to go to the family event she doesn't want to go to. She's going. The decision is already made. She's in the car. Her body is locked. Jaw set, shoulders pulled up, the face that says everyone in the car already knows exactly how she feels about being in this car. She walks into the event. She does the thing. Her parents call it cooperation and move on. She knows the truth. The willing was performed. The willful was running underneath the whole time. The mismatch between the body and the action is what made the whole day feel so exhausting.</p>
-  </blockquote>
-
-  <hr>
-
-  <h2><span class="eyebrow">The frame</span>Three modes, not two</h2>
-  <p>Most teens get taught their brain has two modes. The cool rational one — homework, decisions, the college list. And the hot emotional one — rage, crying, the freakout. Two modes is incomplete. There's a third one that lives underneath both, and recognizing it is the entire point of this skill.</p>
-  <p>The three modes are called <strong>Willful</strong>, <strong>Willing</strong>, and <strong>Wise</strong>. They are not personality types. They are not life stages. They are positions your mind can be in right now, in this moment, and the position can change. Your body tells you which one is running before the words catch up to it.</p>
-
-  <hr>
-
-  <h2><span class="eyebrow">Mode one</span>Willful</h2>
-
-  <div class="card willful">
-    <h3><span class="num">1</span>The no that lives in your throat</h3>
-
-    <div class="row">
-      <div class="row-label">What it is</div>
-      <div class="row-text">You don't want to do it. You've decided you don't want to do it. You're not doing it. Sometimes you're not doing it even when you know it's the right thing to do. Sometimes especially then.</div>
-    </div>
-
-    <div class="row">
-      <div class="row-label">What it's for</div>
-      <div class="row-text">Holding a line. Protecting yourself against something that feels like coercion. Buying time. Some willful is real and necessary. Not all of it.</div>
-    </div>
-
-    <div class="row">
-      <div class="row-label">What it kills</div>
-      <div class="row-text">Solving the problem. Hearing anyone trying to help. Being known by anyone in the room with you.</div>
-    </div>
-
-    <div class="row">
-      <div class="row-label">Body cue</div>
-      <div class="row-text">Jaw locked. Shoulders up around your ears. Hands fisted or arms crossed tight. Breath shallow and high in your chest. Eyes elsewhere. The classic.</div>
-    </div>
-
-    <div class="row">
-      <div class="row-label">What it says</div>
-      <div class="row-text"><em>I shouldn't have to. I literally don't care. You can't make me.</em> Even if you're not saying it out loud, it's running.</div>
-    </div>
+  <div class="lede">
+    <em>provocation</em>
+    A teen has decided to go to the family event she doesn't want to go to. She's going. The decision is already made. She's in the car. Body locked. Jaw set, shoulders pulled up, the face that says everyone in the car already knows exactly how she feels about being in this car. She walks into the event. She does the thing. Parents call it cooperation and move on. She knows the truth. The willing was performed. The willful was running underneath the whole time. The mismatch between her body and her action is what made the whole day feel so exhausting.
   </div>
 
-  <hr>
+  <div class="grid" id="grid">
 
-  <h2><span class="eyebrow">Mode two</span>Willing</h2>
+    <button class="pad willful" data-key="1" data-reveal="r-willful">
+      <span class="key">1</span>
+      <span class="idx">01 · MODE</span>
+      <span class="label">Willful</span>
+      <span class="teaser">the no that lives in your throat</span>
+      <span class="indicator">tap</span>
+    </button>
 
-  <div class="card willing">
-    <h3><span class="num">2</span>Doing the thing from inside reality</h3>
+    <button class="pad willing" data-key="2" data-reveal="r-willing">
+      <span class="key">2</span>
+      <span class="idx">02 · MODE</span>
+      <span class="label">Willing</span>
+      <span class="teaser">doing it from inside reality</span>
+      <span class="indicator">tap</span>
+    </button>
 
-    <div class="row">
-      <div class="row-label">What it is</div>
-      <div class="row-text">Doing the thing. Not because you want to. Because you've decided to. The wanting and the doing aren't required to match.</div>
-    </div>
+    <button class="pad wise" data-key="3" data-reveal="r-wise">
+      <span class="key">3</span>
+      <span class="idx">03 · MODE</span>
+      <span class="label">Wise</span>
+      <span class="teaser">the mode underneath both</span>
+      <span class="indicator">tap</span>
+    </button>
 
-    <div class="row">
-      <div class="row-label">What it's for</div>
-      <div class="row-text">Forward motion. Finishing the thing. Saying the hard thing. Showing up to the place you'd rather not show up to.</div>
-    </div>
+    <button class="pad warn" data-key="4" data-reveal="r-warn">
+      <span class="key">4</span>
+      <span class="idx">04 · TRAP</span>
+      <span class="label">Willingness theater</span>
+      <span class="teaser">performing willing while willful runs underneath</span>
+      <span class="indicator">tap</span>
+    </button>
 
-    <div class="row">
-      <div class="row-label">What it kills</div>
-      <div class="row-text">The secret pleasure of refusing. The fantasy that the situation is going to dissolve if you just hold out long enough.</div>
-    </div>
+    <button class="pad audit" data-key="5" data-reveal="r-audit">
+      <span class="key">5</span>
+      <span class="idx">05 · AUDIT</span>
+      <span class="label">Five questions</span>
+      <span class="teaser">pick one. answer from this week.</span>
+      <span class="indicator">tap</span>
+    </button>
 
-    <div class="row">
-      <div class="row-label">Body cue</div>
-      <div class="row-text">Hands open, palms up, fingers relaxed (DBT actually calls this <em>willing hands</em> — it's a real practice). Jaw soft. Breath dropping into your belly. Shoulders down. The body lets go before the mind does.</div>
-    </div>
+    <button class="pad try" data-key="6" data-reveal="r-try">
+      <span class="key">6</span>
+      <span class="idx">06 · PRACTICE</span>
+      <span class="label">Try it this week</span>
+      <span class="teaser">small beats ambitious</span>
+      <span class="indicator">tap</span>
+    </button>
 
-    <div class="row">
-      <div class="row-label">What it says</div>
-      <div class="row-text"><em>Okay. Fine, I'm doing this. Not for them, for me.</em> It's not enthusiasm. It's commitment.</div>
-    </div>
   </div>
 
-  <hr>
+  <!-- WILLFUL -->
+  <section id="r-willful" class="reveal willful">
+    <h2>Mode 01</h2>
+    <div class="h-sub">Willful — the no that lives in your throat.</div>
 
-  <h2><span class="eyebrow">Mode three</span>Wise</h2>
-
-  <div class="card wise">
-    <h3><span class="num">3</span>The mode underneath both</h3>
-
-    <div class="row">
-      <div class="row-label">What it is</div>
-      <div class="row-text">Not just emotional. Not just rational. The part of you that knows what's actually true even when your feelings and your logic are arguing.</div>
+    <div class="field">
+      <div class="field-key">What it is</div>
+      <div class="field-val">You don't want to do it. You've decided you don't want to do it. You're not doing it. Sometimes you're not doing it even when you know it's the right thing to do. Sometimes especially then.</div>
     </div>
-
-    <div class="row">
-      <div class="row-label">What it's for</div>
-      <div class="row-text">Making the move you can't make from either side alone. The decision that holds across moods.</div>
+    <div class="field">
+      <div class="field-key">What it's for</div>
+      <div class="field-val">Holding a line. Protecting yourself against something that feels like coercion. Buying time. Some willful is real and necessary. Not all of it.</div>
     </div>
-
-    <div class="row">
-      <div class="row-label">What it kills</div>
-      <div class="row-text">Lying to yourself. Pure feeling pretending to be wisdom. Pure logic pretending to be wisdom. Either collapses the state.</div>
+    <div class="field">
+      <div class="field-key">What it kills</div>
+      <div class="field-val">Solving the problem. Hearing anyone trying to help. Being known by anyone in the room with you.</div>
     </div>
-
-    <div class="row">
-      <div class="row-label">Body cue</div>
-      <div class="row-text">Quiet. Not numb, quiet. Settled shoulders, settled breath, something interior that gets still right before a decision lands. The DBT manual literally describes wise mind as <em>almost always quiet</em>.</div>
+    <div class="field">
+      <div class="field-key">Body cue</div>
+      <div class="field-val">Jaw locked. Shoulders up around your ears. Hands fisted or arms crossed tight. Breath shallow and high in your chest. Eyes elsewhere. The classic.</div>
     </div>
-
-    <div class="row">
-      <div class="row-label">What it says</div>
-      <div class="row-text">Not loud. Wise mind is rarely a speech. It's a knowing that arrives before the words catch up to it.</div>
+    <div class="field">
+      <div class="field-key">What it says</div>
+      <div class="field-val"><em>I shouldn't have to. I literally don't care. You can't make me.</em> Even if you're not saying it out loud, it's running.</div>
     </div>
-  </div>
+  </section>
 
-  <hr>
+  <!-- WILLING -->
+  <section id="r-willing" class="reveal willing">
+    <h2>Mode 02</h2>
+    <div class="h-sub">Willing — doing the thing from inside reality.</div>
 
-  <h2><span class="eyebrow">The trap</span>Willingness theater</h2>
-  <p>Here's the failure mode this skill is mostly trying to catch.</p>
-  <p>You can perform willing while willful is still running underneath. You do the thing. The thing gets done. Your hands look open. Your face is doing the right shape. The adults in the room are satisfied. Your body, however, is still locked. Your jaw never softened. Your shoulders never came down. The action got executed. The state didn't change.</p>
-  <p>Most teens are very good at this. You probably learned it because the actual willful — the version where your body shows what's happening — got punished. So you learned to look willing. The performance is exhausting because it's two jobs at once: doing the thing and managing how the doing looks to other people.</p>
+    <div class="field">
+      <div class="field-key">What it is</div>
+      <div class="field-val">Doing the thing. Not because you want to. Because you've decided to. The wanting and the doing aren't required to match.</div>
+    </div>
+    <div class="field">
+      <div class="field-key">What it's for</div>
+      <div class="field-val">Forward motion. Finishing the thing. Saying the hard thing. Showing up to the place you'd rather not show up to.</div>
+    </div>
+    <div class="field">
+      <div class="field-key">What it kills</div>
+      <div class="field-val">The secret pleasure of refusing. The fantasy that the situation is going to dissolve if you just hold out long enough.</div>
+    </div>
+    <div class="field">
+      <div class="field-key">Body cue</div>
+      <div class="field-val">Hands open, palms up, fingers relaxed (DBT calls this <em>willing hands</em> — actual practice). Jaw soft. Breath dropping into your belly. Shoulders down. Body lets go before the mind does.</div>
+    </div>
+    <div class="field">
+      <div class="field-key">What it says</div>
+      <div class="field-val"><em>Okay. Fine, I'm doing this. Not for them, for me.</em> Not enthusiasm. Commitment.</div>
+    </div>
+  </section>
 
-  <div class="callout warm">
-    <div class="callout-label">The audit</div>
-    <p>Did the body actually shift, or did just the action shift?</p>
-    <p>If only the action shifted, you ran willingness theater. That's data, not failure. The performance got you through the moment. The work is noticing it, naming it, and trying — just sometimes — to let the actual willing run.</p>
-  </div>
+  <!-- WISE -->
+  <section id="r-wise" class="reveal wise">
+    <h2>Mode 03</h2>
+    <div class="h-sub">Wise — the mode underneath both.</div>
 
-  <hr>
+    <div class="field">
+      <div class="field-key">What it is</div>
+      <div class="field-val">Not just emotional. Not just rational. The part of you that knows what's actually true even when your feelings and your logic are arguing.</div>
+    </div>
+    <div class="field">
+      <div class="field-key">What it's for</div>
+      <div class="field-val">Making the move you can't make from either side alone. The decision that holds across moods.</div>
+    </div>
+    <div class="field">
+      <div class="field-key">What it kills</div>
+      <div class="field-val">Lying to yourself. Pure feeling pretending to be wisdom. Pure logic pretending to be wisdom. Either collapses the state.</div>
+    </div>
+    <div class="field">
+      <div class="field-key">Body cue</div>
+      <div class="field-val">Quiet. Not numb, quiet. Settled shoulders, settled breath, something interior that gets still right before a decision lands. The DBT manual literally describes wise mind as <em>almost always quiet</em>.</div>
+    </div>
+    <div class="field">
+      <div class="field-key">What it says</div>
+      <div class="field-val">Not loud. Wise mind is rarely a speech. It's a knowing that arrives before the words catch up to it.</div>
+    </div>
+  </section>
 
-  <h2><span class="eyebrow">Discussion</span>Five questions to sit with</h2>
-  <p>Pick one. Answer from this week, not in general.</p>
+  <!-- WILLINGNESS THEATER -->
+  <section id="r-warn" class="reveal warn">
+    <h2>Trap 04</h2>
+    <div class="h-sub">Willingness theater — the failure mode this whole skill is mostly trying to catch.</div>
 
-  <ol class="audit">
-    <li>Where this week did your body say no while your mouth said fine?</li>
-    <li>Has an adult in your life ever labeled you <em>willful</em> when you were actually right about what was happening? What happened next?</li>
-    <li>What does wise mind actually feel like in your specific body? When have you noticed the quiet?</li>
-    <li>Where do you perform willing instead of be willing? Who is the audience?</li>
-    <li>Where are you confusing identity-forming refusal with willfulness? Where is someone else confusing it for you?</li>
-  </ol>
+    <p>You can perform willing while willful is still running underneath. You do the thing. The thing gets done. Your hands look open. Your face is doing the right shape. The adults in the room are satisfied. Your body, however, is still locked. Your jaw never softened. Your shoulders never came down. The action got executed. The state didn't change.</p>
 
-  <div class="callout">
-    <div class="callout-label">A note</div>
-    <p>Not everything labeled willful is willful. An adolescent refusing something genuinely wrong — an inappropriate request, a violation, a parent's overreach — is not being willful. They are being correct. The skill is the audit, not the verdict. Question two is in here for a reason.</p>
-  </div>
+    <p>Most teens are very good at this. You probably learned it because the actual willful — the version where your body shows what's happening — got punished. So you learned to look willing. The performance is exhausting because it's two jobs at once: doing the thing and managing how the doing looks to other people.</p>
 
-  <hr>
+    <p><strong>The audit:</strong> did the body actually shift, or did just the action shift? If only the action shifted, you ran willingness theater. That's data, not failure. The performance got you through the moment. The work is noticing it, naming it, and trying — just sometimes — to let the actual willing run.</p>
+  </section>
 
-  <h2><span class="eyebrow">Try it this week</span>Pick one small thing</h2>
-  <p>Small beats ambitious. The body learns this by repetition, not by belief about repetition.</p>
+  <!-- AUDIT -->
+  <section id="r-audit" class="reveal audit">
+    <h2>Audit 05</h2>
+    <div class="h-sub">Five questions to sit with. Pick one. Answer from this week.</div>
 
-  <ol class="try-it">
-    <li><strong>Body check at one situation.</strong> Pick one thing this week you don't want to do but will do anyway. While you're doing it, notice what your jaw, shoulders, and hands are actually doing.</li>
-    <li><strong>Audit one no.</strong> Pick one refusal this week. Before you say it, ask: wise or willful? Notice the difference in your body. You don't have to change the answer; just notice.</li>
-    <li><strong>Willing hands, one minute, once a day.</strong> Hands open, palms up, fingers relaxed. Jaw loose. Breath in your belly. See what happens when you do.</li>
-    <li><strong>Catch the theater.</strong> Once this week, name out loud (to yourself) when you are performing willing while willful is underneath. Don't try to change it. Just name it.</li>
-  </ol>
+    <ol class="list">
+      <li>Where this week did your body say <em>no</em> while your mouth said <em>fine</em>?</li>
+      <li>Has an adult in your life ever labeled you <em>willful</em> when you were actually right about what was happening? What happened next?</li>
+      <li>What does wise mind actually feel like in your specific body? When have you noticed the quiet?</li>
+      <li>Where do you perform willing instead of be willing? Who is the audience?</li>
+      <li>Where are you confusing identity-forming refusal with willfulness? Where is someone else confusing it for you?</li>
+    </ol>
 
-  <hr>
+    <p style="margin-top: 1.25rem;"><em>Not everything labeled willful is willful.</em> An adolescent refusing something genuinely wrong — an inappropriate request, a violation, a parent's overreach — is not being willful. They are being correct. The skill is the audit, not the verdict. Question 2 is in here for a reason.</p>
+  </section>
 
-  <h2><span class="eyebrow">Where this comes from</span>The receipts</h2>
-  <p>Wise mind comes from Marsha Linehan's <em>DBT Skills Training Manual</em> (2nd edition, 2015), Mindfulness Handout 3. Willingness and willfulness come from the same book, Distress Tolerance Handout 13. Linehan herself glosses willingness as <em>listening very carefully to your Wise Mind, and then acting from your Wise Mind</em> — that single sentence is the in-canon hinge that links all three modes. The adolescent adaptation comes from Rathus and Miller's <em>DBT Skills Manual for Adolescents</em> (2015), where willfulness gets glossed as "the terrible twos — 'no… no… no…'" — which is exactly accurate and exactly the right level of disrespect.</p>
+  <!-- TRY IT -->
+  <section id="r-try" class="reveal try">
+    <h2>Practice 06</h2>
+    <div class="h-sub">Pick one small thing. Small beats ambitious.</div>
+
+    <ol class="list">
+      <li><strong>Body check.</strong> Pick one thing this week you don't want to do but will do anyway. While you're doing it, notice what your jaw, shoulders, and hands are actually doing.</li>
+      <li><strong>Audit one no.</strong> Pick one refusal this week. Before you say it, ask: wise or willful? Notice the difference in your body. You don't have to change the answer; just notice.</li>
+      <li><strong>Willing hands, one minute, once a day.</strong> Hands open, palms up, fingers relaxed. Jaw loose. Breath in your belly. See what happens when you do.</li>
+      <li><strong>Catch the theater.</strong> Once this week, name out loud (to yourself) when you're performing willing while willful is underneath. Don't try to change it. Just name it.</li>
+    </ol>
+  </section>
 
   <div class="footer">
-    <strong>Crisis support</strong><br>
-    988 Suicide &amp; Crisis Lifeline · call or text <strong>988</strong><br>
-    Crisis Text Line · text <strong>HOME</strong> to 741741<br>
-    Trevor Project (LGBTQ+ youth) · call <strong>1-866-488-7386</strong> or text <strong>START</strong> to 678678<br>
-    National Eating Disorders helpline (ANAD) · <strong>1-888-375-7767</strong>
+    <div>Tap a pad or press its number. <kbd>Esc</kbd> closes the open card.</div>
 
-    <div class="credit">
-      Brian Nuckols, MA, LPC-A · Pittsburgh · <a href="https://briannuckols.com">briannuckols.com</a>
+    <div>Sourced from Linehan (2015) <em>DBT Skills Training Manual</em> — Mindfulness Handout 3 (Wise Mind), Distress Tolerance Handouts 13–14 (Willingness, Willing Hands). Adolescent gloss from Rathus &amp; Miller (2015). Linehan's own hinge sentence: <em>"Willingness is listening very carefully to your Wise Mind, and then acting from your Wise Mind."</em></div>
+
+    <div class="crisis">
+      <strong>Crisis:</strong> 988 Suicide &amp; Crisis Lifeline — call or text <strong>988</strong>. Crisis Text Line — text <strong>HOME</strong> to 741741. Trevor Project — call <strong>1-866-488-7386</strong> or text <strong>START</strong> to 678678. ANAD eating disorders helpline — <strong>1-888-375-7767</strong>.
     </div>
+
+    <div class="credit">Brian Nuckols, MA, LPC-A · Pittsburgh · <a href="https://briannuckols.com">briannuckols.com</a></div>
   </div>
 
-</main>
+</div>
+
+<script>
+  const pads = document.querySelectorAll('.pad');
+  const reveals = document.querySelectorAll('.reveal');
+  const now = document.getElementById('now');
+  let openId = null;
+
+  function closeAll() {
+    pads.forEach(p => p.classList.remove('lit'));
+    reveals.forEach(r => r.classList.remove('open'));
+    openId = null;
+    now.textContent = '';
+  }
+
+  function open(id, label) {
+    if (openId === id) { closeAll(); return; }
+    closeAll();
+    const r = document.getElementById(id);
+    const p = document.querySelector(`[data-reveal="${id}"]`);
+    if (!r || !p) return;
+    r.classList.add('open');
+    p.classList.add('lit');
+    openId = id;
+    now.textContent = '· ' + label;
+    setTimeout(() => {
+      r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 80);
+  }
+
+  pads.forEach(p => {
+    p.addEventListener('click', () => {
+      const id = p.dataset.reveal;
+      const label = p.querySelector('.label').textContent.toLowerCase();
+      open(id, label);
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { closeAll(); return; }
+    const match = Array.from(pads).find(p => p.dataset.key === e.key);
+    if (match) {
+      e.preventDefault();
+      const id = match.dataset.reveal;
+      const label = match.querySelector('.label').textContent.toLowerCase();
+      open(id, label);
+    }
+  });
+</script>
 
 </body>
 </html>
