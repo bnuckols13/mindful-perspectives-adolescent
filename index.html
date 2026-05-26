@@ -3,26 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Willful / Willing / Wise — three brain states</title>
-<meta name="description" content="A teen DBT skills page on three brain states (Willful, Willing, Wise) with the neuroscience and the autonomic signatures that separate them. Linehan's Wise Mind paired with Willingness/Willfulness.">
+<title>Willful · Willing · Wise</title>
+<meta name="description" content="Three states from the DBT canon — Willful, Willing, and Wise — and the one-sentence hinge in Linehan's Handout 13 that links them.">
 <style>
   :root {
     --bg: #0a0a0a;
     --surface: #141414;
-    --surface-2: #1c1c1c;
     --border: #262626;
-    --border-strong: #3a3a3a;
+    --rule: #1f1f1f;
     --text: #e8e6e1;
     --muted: #8a857c;
     --dim: #5a554d;
-    --willful: #c8362d;
-    --willful-dim: rgba(200, 54, 45, 0.12);
-    --willing: #6b8acf;
-    --willing-dim: rgba(107, 138, 207, 0.12);
-    --wise: #b07ec8;
-    --wise-dim: rgba(176, 126, 200, 0.12);
-    --warn: #d4a23c;
-    --warn-dim: rgba(212, 162, 60, 0.12);
+    --accent: #b07ec8;
+    --quote: #c8b378;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,293 +29,160 @@
   }
 
   body {
-    background-image:
-      radial-gradient(circle at 15% 0%, rgba(176, 126, 200, 0.04), transparent 50%),
-      radial-gradient(circle at 85% 100%, rgba(200, 54, 45, 0.03), transparent 50%);
-    padding: 3rem 1.5rem 5rem;
+    padding: 4rem 1.5rem 6rem;
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
-  .container { max-width: 880px; margin: 0 auto; }
+  .container { max-width: 640px; margin: 0 auto; }
 
-  header {
+  .masthead {
+    margin-bottom: 4rem;
+    padding-bottom: 1.75rem;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 1.5rem;
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 2rem;
-    flex-wrap: wrap;
+  }
+  .masthead .eyebrow {
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
   }
   h1 {
     font-size: 0.95rem;
     font-weight: 500;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--text);
-  }
-  h1::before {
-    content: '';
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    background: var(--wise);
-    border-radius: 50%;
-    margin-right: 0.7rem;
-    vertical-align: middle;
-    transform: translateY(-1px);
-    box-shadow: 0 0 12px var(--wise);
-  }
-  .meta {
-    font-size: 0.72rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-  .meta .now { color: var(--wise); margin-left: 0.5rem; }
-
-  .lede {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--wise);
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 2rem;
-    font-size: 0.92rem;
-    line-height: 1.7;
-    color: var(--text);
-    font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
-  }
-  .lede em { color: var(--muted); font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.65rem; display: block; margin-bottom: 0.6rem; font-family: 'IBM Plex Mono', monospace; }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 0.75rem;
-  }
-
-  .pad {
-    position: relative;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 1.25rem 1.1rem 1.1rem;
-    text-align: left;
-    font: inherit;
-    font-size: 0.78rem;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    transition: background 0.12s ease, border-color 0.12s ease, transform 0.06s ease;
-    min-height: 130px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    appearance: none;
-    -webkit-appearance: none;
-  }
-  .pad:hover { background: var(--surface-2); border-color: var(--border-strong); }
-  .pad:active { transform: translateY(1px); }
-  .pad:focus-visible { outline: 1px solid var(--text); outline-offset: 2px; }
-
-  .pad .key {
-    position: absolute;
-    top: 0.7rem;
-    right: 0.85rem;
-    font-size: 0.62rem;
-    color: var(--dim);
-    letter-spacing: 0.1em;
-  }
-  .pad .idx {
-    font-size: 0.6rem;
-    color: var(--muted);
-    letter-spacing: 0.14em;
-    margin-bottom: 0.55rem;
-  }
-  .pad .label {
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    font-size: 0.85rem;
-    line-height: 1.25;
-    margin-bottom: 0.5rem;
-    color: var(--text);
-  }
-  .pad .teaser {
-    font-size: 0.72rem;
-    color: var(--muted);
     line-height: 1.5;
-    margin-top: auto;
+  }
+  .masthead .subtitle {
+    margin-top: 0.85rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    font-style: normal;
+    line-height: 1.6;
+    max-width: 30rem;
   }
 
-  .pad.willful { border-left: 3px solid var(--willful); }
-  .pad.willing { border-left: 3px solid var(--willing); }
-  .pad.wise { border-left: 3px solid var(--wise); }
-  .pad.warn { border-left: 3px solid var(--warn); }
-  .pad.audit { border-left: 3px solid var(--wise); }
-  .pad.try { border-left: 3px solid var(--willing); }
+  section {
+    margin-bottom: 3.5rem;
+  }
 
-  .pad.lit { border-color: var(--border-strong); }
-  .pad.lit.willful { background: var(--willful-dim); border-color: var(--willful); }
-  .pad.lit.willing { background: var(--willing-dim); border-color: var(--willing); }
-  .pad.lit.wise { background: var(--wise-dim); border-color: var(--wise); }
-  .pad.lit.warn { background: var(--warn-dim); border-color: var(--warn); }
-  .pad.lit.audit { background: var(--wise-dim); border-color: var(--wise); }
-  .pad.lit.try { background: var(--willing-dim); border-color: var(--willing); }
-  .pad.lit .key, .pad.lit .idx { color: var(--text); }
-
-  .pad .indicator {
-    position: absolute;
-    bottom: 0.7rem;
-    right: 0.85rem;
-    font-size: 0.6rem;
+  section .sec-num {
+    font-size: 0.65rem;
     color: var(--dim);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
   }
-  .pad.lit .indicator { color: var(--text); }
-  .pad.lit .indicator::before { content: '◉ '; }
-  .pad:not(.lit) .indicator::before { content: '○ '; }
-
-  .reveal {
-    margin-top: 1.5rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 1.5rem 1.5rem 1.75rem;
-    display: none;
-  }
-  .reveal.open { display: block; animation: appear 0.18s ease; }
-  @keyframes appear { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
-
-  .reveal.willful { border-left: 3px solid var(--willful); }
-  .reveal.willing { border-left: 3px solid var(--willing); }
-  .reveal.wise { border-left: 3px solid var(--wise); }
-  .reveal.warn { border-left: 3px solid var(--warn); }
-  .reveal.audit { border-left: 3px solid var(--wise); }
-  .reveal.try { border-left: 3px solid var(--willing); }
-
-  .reveal h2 {
-    font-size: 0.72rem;
+  section h2 {
+    font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    margin-bottom: 0.3rem;
-  }
-  .reveal.willful h2 { color: var(--willful); }
-  .reveal.willing h2 { color: var(--willing); }
-  .reveal.wise h2 { color: var(--wise); }
-  .reveal.warn h2 { color: var(--warn); }
-  .reveal.audit h2, .reveal.try h2 { color: var(--text); }
-
-  .reveal .h-sub {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--text);
-    letter-spacing: -0.005em;
-    line-height: 1.3;
+    color: var(--accent);
     margin-bottom: 1.5rem;
-    font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
   }
 
-  .field {
-    display: grid;
-    grid-template-columns: 130px 1fr;
-    gap: 0.75rem 1.25rem;
-    padding: 0.85rem 0;
-    border-top: 1px solid var(--border);
-  }
-  .field:first-of-type { border-top: none; padding-top: 0; }
-  .field-key {
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding-top: 0.15rem;
-  }
-  .field-val {
-    font-size: 0.92rem;
-    color: var(--text);
-    line-height: 1.65;
-    font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
-  }
-  .field-val em { color: var(--muted); font-style: italic; }
-  .field-val strong { color: var(--text); font-weight: 600; }
-  .field-val .cite { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--dim); }
-
-  .reveal p {
+  p {
     font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
     color: var(--text);
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.7;
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
   }
-  .reveal p:last-child { margin-bottom: 0; }
-  .reveal p em { color: var(--muted); font-style: italic; }
-  .reveal p strong { color: var(--text); font-weight: 600; }
-  .reveal p .cite { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--dim); }
+  p:last-child { margin-bottom: 0; }
+  p em { font-style: italic; color: var(--text); }
+  p strong { font-weight: 600; color: var(--text); }
+  p .cite {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--dim);
+  }
 
-  ol.list {
-    list-style: none;
-    counter-reset: item;
-    font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
-    margin: 0.5rem 0 0;
+  blockquote {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 2px solid var(--quote);
+    background: var(--surface);
+    font-family: 'IBM Plex Serif', 'Iowan Old Style', Georgia, serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.55;
+    color: var(--text);
   }
-  ol.list li {
-    counter-increment: item;
-    padding: 0.85rem 0 0.85rem 2.5rem;
-    border-top: 1px solid var(--border);
+  blockquote .src {
+    display: block;
+    margin-top: 0.6rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    font-style: normal;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  ol.diag {
+    list-style: none;
+    counter-reset: q;
+    font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+    margin: 1rem 0;
+  }
+  ol.diag li {
+    counter-increment: q;
+    padding: 1rem 0 1rem 2.5rem;
+    border-top: 1px solid var(--rule);
     position: relative;
     color: var(--text);
-    font-size: 0.92rem;
-    line-height: 1.55;
+    font-size: 0.98rem;
+    line-height: 1.6;
   }
-  ol.list li:first-child { border-top: none; }
-  ol.list li::before {
-    content: counter(item, decimal-leading-zero);
+  ol.diag li:first-child { border-top: none; }
+  ol.diag li::before {
+    content: counter(q, decimal-leading-zero);
     position: absolute;
     left: 0;
-    top: 0.95rem;
+    top: 1.1rem;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--wise);
-    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
   }
-  ol.list li em { color: var(--muted); font-style: italic; }
-  ol.list li strong { color: var(--text); font-weight: 600; }
+  ol.diag li em { color: var(--muted); font-style: italic; }
 
-  .footer {
-    margin-top: 3rem;
+  hr.fade {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 4rem 0 3rem;
+  }
+
+  .refs {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .refs p { font-family: inherit; font-size: inherit; color: inherit; margin-bottom: 0.85rem; line-height: inherit; }
+  .refs p em { color: var(--text); font-style: italic; }
+
+  .colophon {
+    margin-top: 3.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border);
     font-size: 0.7rem;
-    color: var(--muted);
+    color: var(--dim);
     letter-spacing: 0.03em;
-    line-height: 1.8;
   }
-  .footer kbd {
-    font-family: inherit;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 0.1rem 0.4rem;
-    border-radius: 2px;
-    font-size: 0.65rem;
-    color: var(--text);
-  }
-  .footer a { color: var(--wise); text-decoration: none; border-bottom: 1px solid var(--border); }
-  .footer a:hover { border-color: var(--wise); }
-  .footer .refs { margin-top: 1rem; }
-  .footer .crisis { margin-top: 1.5rem; color: var(--text); }
-  .footer .crisis strong { color: var(--willful); }
-  .footer .credit { margin-top: 1rem; color: var(--dim); font-size: 0.65rem; }
+  .colophon a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .colophon a:hover { border-color: var(--accent); }
 
   @media (max-width: 600px) {
-    body { padding: 2rem 1rem 4rem; }
-    .grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
-    .pad { min-height: 110px; padding: 1rem 0.85rem 0.85rem; }
-    .pad .label { font-size: 0.75rem; }
-    .pad .teaser { font-size: 0.65rem; }
-    .field { grid-template-columns: 1fr; gap: 0.2rem; }
-    .reveal { padding: 1.25rem 1.1rem; }
+    body { padding: 2.5rem 1.25rem 4rem; font-size: 13px; }
+    p { font-size: 0.95rem; }
+    blockquote { font-size: 1rem; padding: 1rem 1.1rem; }
+    h1 { font-size: 0.85rem; letter-spacing: 0.18em; }
+    section h2 { font-size: 0.75rem; }
   }
 </style>
 </head>
@@ -330,251 +190,88 @@
 
 <div class="container">
 
-  <header>
-    <h1>Willful / Willing / Wise</h1>
-    <span class="meta">06 cues<span class="now" id="now"></span></span>
+  <header class="masthead">
+    <div class="eyebrow">DBT · Concept Note</div>
+    <h1>Willful &middot; Willing &middot; Wise</h1>
+    <p class="subtitle">Three states from the DBT canon, and the one-sentence hinge in Handout 13 that links them.</p>
   </header>
 
-  <div class="lede">
-    <em>provocation</em>
-    A teen sits in the car on the way to a family event she did not want to attend. The decision is made; she is going. Her sympathetic nervous system is fully active. Jaw, shoulders, breath rate, postural muscles, all reading high alert. She walks in. She performs the social behaviors. Her parasympathetic system never comes online. The behaviors get executed; the threat state never shifts. Three hours later she is exhausted in a way that makes no sense given that nothing went wrong. The exhaustion is what it costs to run cortical compliance over an unshifted limbic state for three hours. There is a name for that state. There is also a name for the state where the action and the threat-system actually align. There is a third state underneath both. Today is about those three.
-  </div>
-
-  <div class="grid" id="grid">
-
-    <button class="pad willful" data-key="1" data-reveal="r-willful">
-      <span class="key">1</span>
-      <span class="idx">01 · STATE</span>
-      <span class="label">Willful</span>
-      <span class="teaser">limbic refusal overriding the rest</span>
-      <span class="indicator">tap</span>
-    </button>
-
-    <button class="pad willing" data-key="2" data-reveal="r-willing">
-      <span class="key">2</span>
-      <span class="idx">02 · STATE</span>
-      <span class="label">Willing</span>
-      <span class="teaser">action executed alongside the refusal</span>
-      <span class="indicator">tap</span>
-    </button>
-
-    <button class="pad wise" data-key="3" data-reveal="r-wise">
-      <span class="key">3</span>
-      <span class="idx">03 · STATE</span>
-      <span class="label">Wise</span>
-      <span class="teaser">integration. both systems aligned.</span>
-      <span class="indicator">tap</span>
-    </button>
-
-    <button class="pad warn" data-key="4" data-reveal="r-warn">
-      <span class="key">4</span>
-      <span class="idx">04 · FAILURE</span>
-      <span class="label">Compliance theater</span>
-      <span class="teaser">behavior shifted, limbic state did not</span>
-      <span class="indicator">tap</span>
-    </button>
-
-    <button class="pad audit" data-key="5" data-reveal="r-audit">
-      <span class="key">5</span>
-      <span class="idx">05 · AUDIT</span>
-      <span class="label">Five questions</span>
-      <span class="teaser">diagnostic, not aspirational</span>
-      <span class="indicator">tap</span>
-    </button>
-
-    <button class="pad try" data-key="6" data-reveal="r-try">
-      <span class="key">6</span>
-      <span class="idx">06 · PRACTICE</span>
-      <span class="label">Four moves</span>
-      <span class="teaser">trainable. one week.</span>
-      <span class="indicator">tap</span>
-    </button>
-
-  </div>
-
-  <!-- WILLFUL -->
-  <section id="r-willful" class="reveal willful">
-    <h2>State 01</h2>
-    <div class="h-sub">Willful — limbic refusal overriding the rest of the system.</div>
-
-    <div class="field">
-      <div class="field-key">What it is</div>
-      <div class="field-val">A nervous system state in which the threat-evaluation circuits (amygdala, insula, anterior cingulate) are running a refusal signal that the rest of the system has not overridden. Not a character trait. A state. The state can change minute-to-minute and is partly under your control.</div>
-    </div>
-    <div class="field">
-      <div class="field-key">What it's for</div>
-      <div class="field-val">The refusal circuit evolved to protect against coercion, predation, and exhaustion. A no that fires before language is older than language. Not all willful is pathology. Some of it is the body refusing something that should be refused.</div>
-    </div>
-    <div class="field">
-      <div class="field-key">What it blocks</div>
-      <div class="field-val">Anything that requires the prefrontal cortex talking to the limbic system. Problem-solving, taking in new information from another person, social co-regulation. While willful is running, the prefrontal cortex is largely offline for that situation.</div>
-    </div>
-    <div class="field">
-      <div class="field-key">Body cue</div>
-      <div class="field-val">Sympathetic activation visible in postural muscles. Jaw masseter contracted, trapezius engaged (shoulders up), thoracic breathing, fists or arms crossed. Heart rate elevated, heart rate variability suppressed. Pupils slightly dilated. This is the same pattern that shows up under threat. The state and the signature are the same.</div>
-    </div>
-    <div class="field">
-      <div class="field-key">Sounds like</div>
-      <div class="field-val"><em>I shouldn't have to. You can't make me.</em> The verbal form of the limbic refusal. Often arrives before the cortex has decided whether the refusal is accurate.</div>
-    </div>
+  <section>
+    <div class="sec-num">§ 01</div>
+    <h2>The problem</h2>
+    <p>Dialectical Behavior Therapy teaches mindfulness as two modes — Reasonable Mind and Emotion Mind — integrated by a third, Wise Mind. It teaches reality-acceptance as a binary opposition between Willingness and Willfulness. The two systems live in different chapters of the manual and are rarely held in the same conversation.</p>
+    <p>They should be. The opposition between willingness and willfulness is a special case of the integration that Wise Mind names. The third state in each pair is not a separate mode but a recognition of how the first two fit together. Wise Mind is what willingness, when it actually happens, is listening to. The argument here is that the three terms describe a single sequence, and that the sequence is more useful when its parts are taught together.</p>
   </section>
 
-  <!-- WILLING -->
-  <section id="r-willing" class="reveal willing">
-    <h2>State 02</h2>
-    <div class="h-sub">Willing — cortical control executing the action while the limbic system is still firing.</div>
-
-    <div class="field">
-      <div class="field-key">What it is</div>
-      <div class="field-val">A state in which the prefrontal cortex runs the behavior despite the limbic system not having shifted. The action and the affect are uncoupled. You can act without wanting to. The two systems are running in parallel rather than in conflict.</div>
-    </div>
-    <div class="field">
-      <div class="field-key">What it's for</div>
-      <div class="field-val">The cognitive control system (dorsolateral prefrontal cortex) matures into the mid-twenties (Casey, Steinberg). Willing is the practice that builds it. Each time you execute an action despite affect, you are reinforcing the prefrontal-limbic interface. <span class="cite">Casey, B.J. (2015). Annu Rev Psychol. Steinberg, L. (2008). Dev Rev.</span></div>
-    </div>
-    <div class="field">
-      <div class="field-key">What it blocks</div>
-      <div class="field-val">The fantasy that the action requires the matching feeling. Treating an emotion as a veto on behavior keeps the cognitive control system from getting trained. Willing is the move that says the wanting and the doing are not on the same circuit.</div>
-    </div>
-    <div class="field">
-      <div class="field-key">Body cue</div>
-      <div class="field-val">Parasympathetic recruitment. Willing hands (Linehan, 2015, DT Handout 14) is a real intervention. Hands open, palms up, fingers relaxed signals the vagal system that the situation is not a predator. The face follows; thoracic breathing drops into the diaphragm; cardiac vagal tone rises. <span class="cite">Porges, S. (2011). Polyvagal Theory.</span></div>
-    </div>
-    <div class="field">
-      <div class="field-key">Sounds like</div>
-      <div class="field-val"><em>I'm doing this.</em> A statement of action. Not enthusiasm. Not consent dressed up as feeling. A behavioral commit.</div>
-    </div>
+  <section>
+    <div class="sec-num">§ 02</div>
+    <h2>Willful</h2>
+    <p>Linehan's <em>DBT Skills Training Manual</em> defines willfulness as a cluster of related refusals: refusing to tolerate the moment, refusing to make a needed change, giving up, insisting on being in control, attachment to <em>what I want right now</em>. Distress Tolerance Handout 13 names them in series. <span class="cite">Linehan (2015), p. 175.</span></p>
+    <p>The term is exact. It names a real position with real causes. It is also, separately, the term most often misapplied. A refusal that is tracking an actual problem — an inappropriate request, a real risk, a coercion the refuser is correct to resist — is not willfulness. It looks like willfulness from the outside. The audit is whether the refusal serves the refuser's accurate read of the situation or whether it serves nothing but the refusal itself.</p>
+    <p>The diagnostic question Linehan gives, applied to one's own willfulness, is the one most often skipped: <em>what is the threat?</em> If there is an answer, the refusal is tracking something. If there is no answer, the refusal is autonomous, which is the position the term is reserved for.</p>
   </section>
 
-  <!-- WISE -->
-  <section id="r-wise" class="reveal wise">
-    <h2>State 03</h2>
-    <div class="h-sub">Wise — limbic and prefrontal signals aligned on the same action.</div>
-
-    <div class="field">
-      <div class="field-key">What it is</div>
-      <div class="field-val">A state in which both systems are co-signing the move. Not the loudest mode. The quietest. Linehan describes wise mind as <em>almost always quiet</em> because integration registers as the absence of internal argument, not the presence of certainty. <span class="cite">Linehan, M. (2015). DBT Skills Training Manual, p. 168.</span></div>
-    </div>
-    <div class="field">
-      <div class="field-key">What it's for</div>
-      <div class="field-val">High-stakes decisions where pure cortical override (Willing) is brittle under load and pure affect is unreliable as a guide. Wise mind is the state in which the decision holds across mood. It is rarer than the other two and worth recognizing when it shows up.</div>
-    </div>
-    <div class="field">
-      <div class="field-key">What it blocks</div>
-      <div class="field-val">Manufactured certainty. Wise mind is recognized, not produced. Trying to make wise mind happen usually generates either willful (limbic doubling down) or willing (cortical performance of certainty over an unsettled limbic state).</div>
-    </div>
-    <div class="field">
-      <div class="field-key">Body cue</div>
-      <div class="field-val">Settled autonomic state. Heart rate variability stabilized. Breath regular and low. Postural muscles released. The quiet Linehan describes is the vagal-tone signature of integration. It is recognizable in the body before it is recognizable as a decision.</div>
-    </div>
-    <div class="field">
-      <div class="field-key">Sounds like</div>
-      <div class="field-val">Not loud. Often not a sentence. A knowing that arrives before the words catch up to it. If you can name when this state has happened to you, the naming is the practice.</div>
-    </div>
+  <section>
+    <div class="sec-num">§ 03</div>
+    <h2>Willing</h2>
+    <p>Willingness, in the same handout, is <em>readiness to enter and participate fully in life and living</em>. It is doing what the situation requires, wholeheartedly, without dragging the feet. It is acting from inside the conditions one is in rather than from inside the conditions one wishes one were in. <span class="cite">Linehan (2015), p. 175.</span></p>
+    <p>Willingness is not enthusiasm. Acting willingly does not require wanting to act. The decoupling of action from affect is, in the manual's framing, the operational definition. The skill is the practice of doing what is required without making the doing contingent on the wanting.</p>
   </section>
 
-  <!-- COMPLIANCE THEATER -->
-  <section id="r-warn" class="reveal warn">
-    <h2>Failure 04</h2>
-    <div class="h-sub">Compliance theater — cortical motor commands running while the limbic state has not shifted.</div>
-
-    <p>Cortical motor commands can execute without affective consent. You can do the thing while your threat circuits stay engaged. Most teens learned this in environments where displayed refusal got punished. The visible willful was extinguished; the internal willful kept running. The output looks like willing. The state is still willful.</p>
-
-    <p>The cost is regulatory load. Two systems running in conflict for hours produces a measurable signature: elevated cortisol, suppressed heart rate variability, glycogen depletion in the prefrontal cortex. The teen's report afterward — <em>I'm so exhausted and I don't know why</em> — is what that load feels like from the inside. <span class="cite">McEwen, B. (2007). Physiol Rev. Hagger, M. (2010). Psychol Bull.</span></p>
-
-    <p><strong>The audit.</strong> Did the limbic state shift, or just the cortical output? If only the cortical output shifted, you ran compliance theater. That is data, not failure. The theater got you through the moment. The work is noticing it, naming it, and sometimes letting the actual willing run — the version where the prefrontal-limbic conversation actually happens.</p>
+  <section>
+    <div class="sec-num">§ 04</div>
+    <h2>Wise Mind</h2>
+    <p>Wise Mind, in Mindfulness Handout 3, is <em>the integration of opposites: reasonable mind and emotion mind</em>. It is the part of the person that <em>can know and experience truth</em>. Linehan adds the descriptor most often cited from the handout: <em>it is almost always quiet</em>. <span class="cite">Linehan (2015), p. 168.</span></p>
+    <p>The descriptor matters. Wise Mind is not a louder version of reasoning. It is not a louder version of feeling. It is what registers when the argument between them has settled enough that something underneath both is hearable. The manual frames it as a state to recognize rather than a state to produce. The recognition is the practice.</p>
   </section>
 
-  <!-- AUDIT -->
-  <section id="r-audit" class="reveal audit">
-    <h2>Audit 05</h2>
-    <div class="h-sub">Five diagnostic questions. Pick one. Answer from this week.</div>
+  <section>
+    <div class="sec-num">§ 05</div>
+    <h2>The hinge</h2>
+    <p>The sentence that connects the two skills appears in Handout 13. Once it is seen, the rest of the architecture follows:</p>
 
-    <ol class="list">
-      <li>Name a moment this week when your body's threat signal stayed on while your behavior complied with the demand. What was the threat tracking?</li>
-      <li>Has an adult labeled your refusal <em>willful</em> when the refusal was tracking an actual problem? The diagnostic: was the threat real? If yes, the refusal was data, not pathology.</li>
-      <li>When have you experienced the integration state — both systems quiet, the decision arriving without force? Name the moment, not the type of moment.</li>
-      <li>Where do you produce cortical compliance for an audience? Whose audience? The audience matters more than the action.</li>
-      <li>Where in your life is identity-formation refusal being misread as pathological willfulness, by you or by someone else? Adolescent refusal of imposed meaning is what identity formation is partly made of. The skill is the audit, not the verdict.</li>
+    <blockquote>
+      Willingness is listening very carefully to your Wise Mind, and then acting from your Wise Mind.
+      <span class="src">Linehan (2015), <em>DBT Skills Training Handouts and Worksheets</em>, Distress Tolerance Handout 13, p. 175.</span>
+    </blockquote>
+
+    <p>Willingness, in Linehan's own formulation, is the cognitive-behavioral consequence of having heard Wise Mind. The act follows the recognition. The hinge between the willingness/willfulness opposition and the three-state mindfulness frame is one sentence, in one handout, and it is the sentence the curriculum has been organizing toward.</p>
+    <p>Read in this order, the three terms are not three separate skills. They are a single sequence with one entry point. The entry point is the practice of listening for the quiet.</p>
+  </section>
+
+  <section>
+    <div class="sec-num">§ 06</div>
+    <h2>The diagnostic</h2>
+    <p>Three questions, in order. The order is not negotiable.</p>
+
+    <ol class="diag">
+      <li>What is the situation requiring? <em>Wise Mind answers this. If Wise Mind is not available, the question is premature.</em></li>
+      <li>Is the answer being refused? <em>If yes, willfulness is running. Linehan's question — what is the threat? — sorts whether the refusal is tracking anything outside itself.</em></li>
+      <li>Is the answer being acted on? <em>If yes, willingness is running. The state holds when the action and the recognition are continuous.</em></li>
     </ol>
+
+    <p>Willingness without Wise Mind is performance. Willfulness without Wise Mind is unexamined refusal. Wise Mind without action is a recognition that has not yet become a life.</p>
   </section>
 
-  <!-- TRY IT -->
-  <section id="r-try" class="reveal try">
-    <h2>Practice 06</h2>
-    <div class="h-sub">Four trainable moves. Pick one. One week.</div>
+  <hr class="fade">
 
-    <ol class="list">
-      <li><strong>Body audit during execution.</strong> Pick one act of compliance this week. While you are doing it, run a thirty-second check on sympathetic versus parasympathetic indicators. Jaw, shoulders, breath rate, postural muscles. Note whether the limbic state actually shifted or whether you ran compliance theater.</li>
-      <li><strong>Diagnose one no.</strong> Before saying a no this week, run the audit: is this limbic threat-signal, or considered refusal that the prefrontal cortex is co-signing? Different answer, different move.</li>
-      <li><strong>Willing hands, one minute, once a day.</strong> Hands open, palms up, fingers relaxed. Jaw loose. Diaphragmatic breath. Vagal recruitment is trainable. The state changes with one minute of input per day across about three weeks.</li>
-      <li><strong>Catch the theater.</strong> Name once this week, out loud or to yourself, when cortical output is doing the work an unshifted limbic state has not authorized. Do not try to change it. The naming is the practice.</li>
-    </ol>
-  </section>
-
-  <div class="footer">
-    <div>Tap a pad or press its number. <kbd>Esc</kbd> closes the open card.</div>
+  <section>
+    <div class="sec-num">§ 07</div>
+    <h2>References</h2>
 
     <div class="refs">
-      Sourced from Linehan (2015) <em>DBT Skills Training Manual</em> — Mindfulness Handout 3 (Wise Mind, p. 28) and Distress Tolerance Handouts 13–14 (Willingness, Willing Hands, pp. 175–176). Adolescent adaptation from Rathus &amp; Miller (2015), <em>DBT Skills Manual for Adolescents</em>. The dual-systems neuroscience comes from Casey (2015, Annu Rev Psychol) and Steinberg (2008, Dev Rev). Cardiac vagal tone framing from Porges (2011), <em>The Polyvagal Theory</em>. Linehan's in-canon hinge sentence: <em>"Willingness is listening very carefully to your Wise Mind, and then acting from your Wise Mind"</em> (DT Handout 13, p. 175).
+      <p>Linehan, M. M. (2015). <em>DBT Skills Training Manual</em> (2nd ed.). New York: Guilford Press. Mindfulness Handout 3 (Wise Mind), p. 28. Distress Tolerance Handouts 13–14 (Willingness, Half-Smiling and Willing Hands), pp. 175–176.</p>
+      <p>Linehan, M. M. (1993). <em>Cognitive-Behavioral Treatment of Borderline Personality Disorder</em>. New York: Guilford Press. [Originating text for the willingness/willfulness terminology in the DBT canon.]</p>
+      <p>May, G. G. (1982). <em>Will and Spirit: A Contemplative Psychology</em>. San Francisco: HarperOne. [The proximate philosophical-clinical source from which Linehan draws the willingness/willfulness distinction.]</p>
+      <p>Rathus, J. H., &amp; Miller, A. L. (2015). <em>DBT Skills Manual for Adolescents</em>. New York: Guilford Press. [Walking the Middle Path module; the natural curricular home for the three-state synthesis.]</p>
     </div>
 
-    <div class="crisis">
-      <strong>Crisis support.</strong> 988 Suicide &amp; Crisis Lifeline — call or text <strong>988</strong>. Crisis Text Line — text <strong>HOME</strong> to 741741. Trevor Project — call <strong>1-866-488-7386</strong> or text <strong>START</strong> to 678678. ANAD eating disorders helpline — <strong>1-888-375-7767</strong>.
+    <div class="colophon">
+      Brian Nuckols, MA, LPC-A · Pittsburgh · <a href="https://briannuckols.com">briannuckols.com</a>
     </div>
-
-    <div class="credit">Brian Nuckols, MA, LPC-A · Pittsburgh · <a href="https://briannuckols.com">briannuckols.com</a></div>
-  </div>
+  </section>
 
 </div>
-
-<script>
-  const pads = document.querySelectorAll('.pad');
-  const reveals = document.querySelectorAll('.reveal');
-  const now = document.getElementById('now');
-  let openId = null;
-
-  function closeAll() {
-    pads.forEach(p => p.classList.remove('lit'));
-    reveals.forEach(r => r.classList.remove('open'));
-    openId = null;
-    now.textContent = '';
-  }
-
-  function open(id, label) {
-    if (openId === id) { closeAll(); return; }
-    closeAll();
-    const r = document.getElementById(id);
-    const p = document.querySelector(`[data-reveal="${id}"]`);
-    if (!r || !p) return;
-    r.classList.add('open');
-    p.classList.add('lit');
-    openId = id;
-    now.textContent = '· ' + label;
-    setTimeout(() => {
-      r.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 80);
-  }
-
-  pads.forEach(p => {
-    p.addEventListener('click', () => {
-      const id = p.dataset.reveal;
-      const label = p.querySelector('.label').textContent.toLowerCase();
-      open(id, label);
-    });
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') { closeAll(); return; }
-    const match = Array.from(pads).find(p => p.dataset.key === e.key);
-    if (match) {
-      e.preventDefault();
-      const id = match.dataset.reveal;
-      const label = match.querySelector('.label').textContent.toLowerCase();
-      open(id, label);
-    }
-  });
-</script>
 
 </body>
 </html>
